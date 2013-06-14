@@ -1,0 +1,23 @@
+<% content_for :body do %>
+
+  <ul class="products">
+    <% @products.each do |product| %>
+      <li>
+         <%= link_to product.name, refinery.products_product_path(product) %>  
+         
+          <table>
+            <tr>
+            <th>
+              <%= image_fu product.photo, "200x200", class: "image-align-#{cycle("left","right")}" %>
+            </th>
+            <th>
+              <%= raw product.description  %>  
+            </th>
+          </table>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render '/refinery/content_page' %>
+

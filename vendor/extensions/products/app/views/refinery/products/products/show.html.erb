@@ -1,0 +1,29 @@
+<% content_for :body_content_title do %>
+  <%= @product.name %>
+<% end %>
+
+<% content_for :body do %>
+  <section>
+    <h1>Name</h1>
+    <p>
+      <%=raw @product.name %>
+    </p>
+  </section>
+  <section>
+    <h1>Description</h1>
+    <p>
+      <%=raw @product.description %>
+    </p>
+  </section>
+  <section>
+    <h1>Photo</h1>
+    <p>
+      <%= image_fu @product.photo,"400x400", class: "image-aligin-left" %>
+    </p>
+  </section>
+<% end %>
+
+
+
+<%= render '/refinery/content_page' %>
+<p><%= link_to "Back to list", refinery.products_products_path %> </p>
